@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.scss";
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const alerta = alert("Hello World!!!");
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +21,12 @@ function App() {
         >
           Learn React
         </a>
+        <div>
+          <button onClick={() => setModalOpen(true)}>Exibir modal</button>
+          <button onClick={() => setModalOpen(true)}>Remover modal</button>
+
+          {modalOpen && alerta}
+        </div>
       </header>
     </div>
   );
